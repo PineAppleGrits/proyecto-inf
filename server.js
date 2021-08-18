@@ -4,7 +4,6 @@ const passport = require('passport');
 const path = require('path');
 // Importing Routes
 const cors = require('cors');
-
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server, {
