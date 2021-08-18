@@ -9,9 +9,9 @@ const server = require('http').createServer(app);
 const io = require('socket.io')(server, {
   cors: {
     transport: ['websocket', 'polling', 'flashsocket'],
-    origin: ['http://localhost:3000'],
+    origin: ['http://localhost:3000', 'http://localhost'],
     methods: ['GET', 'POST'],
-    credentials: true,
+    credentials: false,
   },
 });
 const users = require('./routes/api/users');
