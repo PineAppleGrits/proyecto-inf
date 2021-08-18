@@ -7,7 +7,7 @@ const useChat = () => {
   const socketRef = useRef();
   const [messages, setMessages] = useState([]);
   useEffect(() => {
-    socketRef.current = socketIOClient('http://localhost:5000', {
+    socketRef.current = socketIOClient('http://localhost:'+process.env.PORT||5000, {
       withCredentials: false,
     });
 
