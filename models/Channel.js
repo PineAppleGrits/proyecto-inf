@@ -7,12 +7,13 @@ const ChannelSchema = new Schema({
     type: String,
     required: true,
   },
-  messages: {
-      type:Map,
-      of: Schema.Types.ObjectId,
-      ref: 'messages'
+  messages: [
+        {
+      type: Schema.Types.ObjectId,
+      ref: 'messages',
+    },
     
-  }
+  ]
 });
 
 const Channel = mongoose.model('channels', ChannelSchema);

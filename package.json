@@ -28,10 +28,16 @@
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "nodemon": "^2.0.12"
-  }
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm i && npm run client-install && npm run build --prefix client",
+    "prod": "NODE_ENV=production npm start",
+    "build-prod": "npm run build && npm run prod"
   },
   "repository": {
     "type": "git",

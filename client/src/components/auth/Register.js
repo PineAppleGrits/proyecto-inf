@@ -77,27 +77,27 @@ class Register extends Component {
       >
         <div className="row ">
           <div className="card mx-auto col-6 align-self-center">
-          <Link to="/" className="d-flex align-items-center">
-                <i className="material-icons left">keyboard_backspace</i>
-                <span>
-                  <Trans className="text-danger" ns="auth" i18nKey="backHome">
-                    Back to home
-                  </Trans>
-                </span>
-              </Link>
+            <Link to="/" className="d-flex align-items-center">
+              <i className="material-icons left">keyboard_backspace</i>
+              <span>
+                <Trans className="text-danger" ns="auth" i18nKey="backHome">
+                  Back to home
+                </Trans>
+              </span>
+            </Link>
 
             <div className="col s12" style={{ paddingLeft: '11.250px' }}>
               <h4>
-              <Trans ns="auth" i18nKey="registerBelow">
-                    <strong>Login</strong>
-                    below
-                  </Trans>
+                <Trans ns="auth" i18nKey="registerBelow">
+                  <strong>Login</strong>
+                  below
+                </Trans>
               </h4>
               <p>
-              <Trans ns="auth" i18nKey="loginOption">
-                    Have an account?
-                    <Link to="/login">Login</Link>
-                  </Trans>
+                <Trans ns="auth" i18nKey="loginOption">
+                  Have an account?
+                  <Link to="/login">Login</Link>
+                </Trans>
               </p>
             </div>
 
@@ -121,9 +121,9 @@ class Register extends Component {
 
               <div className="input-field col s12">
                 <label htmlFor="email">
-                <Trans ns="auth" i18nKey="emailField">
-                      Email
-                    </Trans>
+                  <Trans ns="auth" i18nKey="emailField">
+                    Email
+                  </Trans>
 
                 </label>
                 <input
@@ -143,9 +143,9 @@ class Register extends Component {
 
               <div className="input-field col s12">
                 <label htmlFor="password">
-                <Trans ns="auth" i18nKey="passwordField">
-                      Password
-                    </Trans>
+                  <Trans ns="auth" i18nKey="passwordField">
+                    Password
+                  </Trans>
                 </label>
                 <input
                   onChange={this.onChange}
@@ -164,9 +164,9 @@ class Register extends Component {
 
               <div className="input-field col s12">
                 <label htmlFor="password2">
-                <Trans ns="auth" i18nKey="confirmPasswordField">
-                      Confirm Password
-                    </Trans>
+                  <Trans ns="auth" i18nKey="confirmPasswordField">
+                    Confirm Password
+                  </Trans>
                 </label>
                 <input
                   onChange={this.onChange}

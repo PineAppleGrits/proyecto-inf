@@ -89,11 +89,11 @@ class Login extends Component {
                 <h4>
                   <Trans ns="auth" i18nKey="loginBelow">
                     <strong>Login</strong>
-                    
+
                     below
                   </Trans>
                 </h4>
-                <p >
+                <p>
                   <Trans ns="auth" i18nKey="registerOption">
                     Dont have an account?
                     <Link to="/register">Register</Link>
