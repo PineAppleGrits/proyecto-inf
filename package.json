@@ -60,7 +60,7 @@
   },
 {
   "engines": {
-    "npm": "~1.0.20"
+    "node": ">15"
   }
 },
   "homepage": "https://github.com/PineAppleGrits/proyecto-inf#readme"
