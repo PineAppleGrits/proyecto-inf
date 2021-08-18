@@ -5,9 +5,11 @@ import { useParams } from 'react-router';
 const useChat = () => {
   const { channelId } = useParams();
   const socketRef = useRef();
+  const PORT = process.env.PORT || 5000;
+  const URL = `http://localhost:${PORT}`
   const [messages, setMessages] = useState([]);
   useEffect(() => {
-    socketRef.current = socketIOClient('http://localhost:'+process.env.PORT||5000, {
+    socketRef.current = socketIOClient(URL, {
       withCredentials: false,
     });
 
