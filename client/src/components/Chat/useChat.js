@@ -9,9 +9,7 @@ const useChat = () => {
   const URL = `http://localhost`
   const [messages, setMessages] = useState([]);
   useEffect(() => {
-    socketRef.current = socketIOClient(URL, {
-      withCredentials: false,
-    });
+    socketRef.current = socketIOClient();
 
     socketRef.current.emit('onChannel', channelId);
     socketRef.current.on('mostRecentMessages', (mostRecentMessages) => {
