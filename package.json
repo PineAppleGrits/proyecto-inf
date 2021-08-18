@@ -35,12 +35,12 @@
     "prettier": "^2.3.2"
   },
   "scripts": {
-    "client-install": "npm install --prefix client",
+    "client-install": "npm install --no-optional --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm i && npm run client-install && npm run build --prefix client",
+    "build": "npm i --no-optional && npm run client-install && npm run build --prefix client",
     "prod": "NODE_ENV=production npm start",
     "build-prod": "npm run build && npm run prod"
   },
