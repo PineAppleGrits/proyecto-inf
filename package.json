@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "School project",
   "main": ".eslintrc.js",
+"engines": {
+    "node": ">15.0.0",
+    "npm": ">=5.0.0"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
@@ -58,10 +62,5 @@
   "bugs": {
     "url": "https://github.com/PineAppleGrits/proyecto-inf/issues"
   },
-{
-  "engines": {
-    "node": ">15"
-  }
-},
   "homepage": "https://github.com/PineAppleGrits/proyecto-inf#readme"
 }
