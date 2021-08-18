@@ -58,5 +58,10 @@
   "bugs": {
     "url": "https://github.com/PineAppleGrits/proyecto-inf/issues"
   },
+{
+  "engines": {
+    "npm": "~1.0.20"
+  }
+},
   "homepage": "https://github.com/PineAppleGrits/proyecto-inf#readme"
 }
