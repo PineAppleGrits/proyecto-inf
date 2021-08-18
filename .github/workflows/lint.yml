@@ -3,9 +3,18 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: npm i -D
-    - name: Run ESLint
-      run: npx run eslint ** --resolve-plugins-relative-to .
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - name: Install
+        run: npm ci  # OR: yarn 
+      - name: Run eslint on changed files
+        uses: tj-actions/eslint-changed-files@v6.5
+        with:
+          config_path: ".eslintrc"
+          ignore_path: ".eslintignore"
+          extensions: "ts,tsx,js,jsx"
+          extra_args: "--max-warnings=0"
