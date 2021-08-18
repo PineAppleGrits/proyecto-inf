@@ -6,7 +6,7 @@ const useChat = () => {
   const { channelId } = useParams();
   const socketRef = useRef();
   const PORT = process.env.PORT || 5000;
-  const URL = `http://localhost:${PORT}`
+  const URL = `http://localhost`
   const [messages, setMessages] = useState([]);
   useEffect(() => {
     socketRef.current = socketIOClient(URL, {
