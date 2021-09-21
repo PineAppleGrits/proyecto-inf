@@ -4,7 +4,7 @@
   "description": "School project",
   "main": ".eslintrc.js",
 "engines": {
-    "node": ">15.0.0",
+    "node": "14.x",
     "npm": ">=5.0.0"
   },
   "dependencies": {
