@@ -28,7 +28,7 @@ class Dashboard extends Component {
               {' '}
               {user.name}
               <p>
-                Te logueaste a mi ? Piola, mejor andá al github a mirar el progreso.
+                Proba el chat!
               </p>
             </h4>
 
@@ -60,7 +60,23 @@ class Dashboard extends Component {
                 Back to home
               </Link>
             </button>
-          </div>
+
+          
+            <br />
+            <button
+              style={{
+                width: '150px',
+                borderRadius: '3px',
+                letterSpacing: '1.5px',
+                marginTop: '1rem',
+              }}
+              type="button"
+              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+            >
+              <Link to="/channel/60f63257aa1eb400153ad0b1">
+                Example Channel
+              </Link>
+            </button></div>
         </div>
       </div>
     );
