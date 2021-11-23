@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Chat from '../Chat/Chat';
 import { logoutUser } from '../../actions/authActions';
-
+import MainContainer from '../dashboard/MainContainer'
 class Channel extends Component {
   onLogoutClick(e) {
     const { props } = this;
@@ -16,10 +16,11 @@ class Channel extends Component {
     const { auth } = this.props;
     const { user } = auth;
     return (
-      <div style={{ height: '75vh' }} className="container valign-wrapper">
+/*       <div style={{ height: '75vh' }} className="container valign-wrapper">
         <Chat currentUserData={user} />
 
-      </div>
+      </div> */
+      <MainContainer component={<Chat currentUserData={user} />}/>
     );
   }
 }

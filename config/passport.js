@@ -3,7 +3,7 @@ const { ExtractJwt } = require('passport-jwt');
 const mongoose = require('mongoose');
 const log = require('../logger');
 
-const User = mongoose.model('users');
+const User = mongoose.model('User');
 const keys = require('./keys');
 
 const opts = {};

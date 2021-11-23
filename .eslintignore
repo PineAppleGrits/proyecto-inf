@@ -1,10 +1,2 @@
-**/node_modules/
-node_modules/
-client/node_modules
-client/build
-client/public
-LICENSE
-package.json
-package-lock.json
 *.md
 package*.json

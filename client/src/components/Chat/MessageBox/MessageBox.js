@@ -1,23 +1,24 @@
 import React, { useState, useRef } from 'react';
 import TextField from '@material-ui/core/TextField';
-import { useParams } from 'react-router';
+import { useParams, withRouter } from 'react-router';
 import PropTypes from 'prop-types';
-
+import {connect} from 'react-redux'
 const MessageBox = (props) => {
   const { channelId } = useParams();
   const [message, setMessage] = useState('');
   const messageRef = useRef('');
+
   const sendMessageClick = () => {
     if (messageRef.current.value === '') {
       return false;
     }
     messageRef.current.value.replace(/\s+$/gm, '');
     const messageObject = {
-      name: props.userData.currentUserData.name,
       message: messageRef.current.value,
-      messageAuthor: props.userData.currentUserData.id,
+      message_author: props.auth.user._id,
       channel_id: channelId,
     };
+    console.log({messageObject:messageObject})
     props.onSendMessage(messageObject);
     return setMessage('');
   };
@@ -53,4 +54,9 @@ MessageBox.propTypes = {
   userData: PropTypes.object.isRequired,
   onSendMessage: PropTypes.func.isRequired,
 };
-export default MessageBox;
+
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+
+});
+export default withRouter(connect(mapStateToProps)(MessageBox));

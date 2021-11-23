@@ -1,7 +1,7 @@
-import React, { useState, Suspense } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import React, { useState, useEffect, Suspense } from 'react';
+import { BrowserRouter as Router, Route, Switch , useLocation,withRouter  } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { storedUser } from './actions/authActions';
+import { storedUser, getUserInfo, setCurrentUser } from './actions/authActions';
 import store from './store';
 import Landing from './components/layout/Landing';
 import Login from './components/auth/Login';
@@ -9,21 +9,23 @@ import Register from './components/auth/Register';
 import PrivateRoute from './components/private-route/PrivateRoute';
 import Dashboard from './components/dashboard/Dashboard';
 import Channel from './components/conversations/Channel';
+import Server from './components/conversations/Server';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import 'react-languages-select/css/react-languages-select.css';
+import axios from 'axios';
 import LoadingScreen from './components/util/LoadingScreen';
-// If user in localstorage, check session to see if it's expired.
-if (localStorage.jwtToken) {
-  if (storedUser(localStorage, store)) {
-    window.location.href = './login';
-  }
-}
 
-function App() {
+// If user in localstorage, check session to see if it's expired.
+
+function App({history}) {
   const [userData, setUserData] = useState(null);
+  useEffect(() => {
+    if (localStorage.jwtToken){
+      getUserInfo(localStorage, store)
+    } 
+  }, [history.location.pathname])
   return (
     <Provider store={store}>
-      <Router>
         <div className="App">
           <Suspense delayMs={1500} fallback={<LoadingScreen />}>
             <div className="sticky-alerts" />
@@ -42,21 +44,27 @@ function App() {
                 <Route exact path="/login" component={Login} />
               </Suspense>
               <Switch>
-                <PrivateRoute exact path="/dashboard" component={Dashboard} />
-                <PrivateRoute
+                <PrivateRoute exact path="/@me/" component={Dashboard} />
+                {/* <PrivateRoute
                   exact
                   userData={userData}
                   setUserData={setUserData}
                   path="/channel/:channelId"
                   component={Channel}
+                /> */}
+                <PrivateRoute
+                  exact
+                  userData={userData}
+                  setUserData={setUserData}
+                  path="/channel/:serverId/:channelId?"
+                  component={Server}
                 />
               </Switch>
             </div>
           </Suspense>
         </div>
-      </Router>
     </Provider>
   );
 }
 
-export default App;
+export default withRouter(App);

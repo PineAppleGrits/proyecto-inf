@@ -44,6 +44,20 @@ export const loginUser = (userData) => (dispatch) => {
     }));
 };
 
+export const getUserInfo = (localStorage, store) => {
+  // Set auth token header auth
+  const localToken = localStorage.jwtToken;
+  axios.post('/api/users/', {token: localToken}).then(({data}) => {
+    const {token} = data;
+    setAuthToken(token);
+    const decoded = jwtDecode(token);
+    store.dispatch(setCurrentUser(decoded));
+  })
+  // False = not expired token
+  return false;
+};
+
+
 // User loading
 export const setUserLoading = () => ({
   type: USER_LOADING,
@@ -63,22 +77,23 @@ export const logoutUser = () => (dispatch) => {
 
 export const storedUser = (localStorage, store) => {
   // Set auth token header auth
-  const token = localStorage.jwtToken;
-  setAuthToken(token);
-  // Decode token and get user info and exp
-  const decoded = jwtDecode(token);
-  // Set user and isAuthenticated
-  store.dispatch(setCurrentUser(decoded));
+  const localToken = localStorage.jwtToken;
+  const oldDecoded = jwtDecode(localToken);
   // Check for expired token
   const currentTime = Date.now() / 1000; // to get in milliseconds
-
-  if (decoded.exp < currentTime) {
+  if (oldDecoded.exp < currentTime) {
     // Logout user
     store.dispatch(logoutUser());
 
     // True = expired token
     return true;
   }
+  axios.post('/api/users/', {token: localToken}).then(({data}) => {
+    const {token} = data;
+    setAuthToken(token);
+    const decoded = jwtDecode(token);
+    store.dispatch(setCurrentUser(decoded));
+  })
   // False = not expired token
   return false;
 };

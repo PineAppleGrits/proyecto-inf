@@ -4,6 +4,7 @@ const passport = require('passport');
 const path = require('path');
 // Importing Routes
 const cors = require('cors');
+
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server, {
@@ -17,6 +18,8 @@ const io = require('socket.io')(server, {
 const users = require('./routes/api/users');
 const messages = require('./routes/api/messages');
 const channels = require('./routes/api/channels');
+const servers = require('./routes/api/servers');
+const apiIndex = require('./routes/api/index');
 // Initializing express and socketio
 const port = process.env.PORT || 5000;
 const log = require('./logger');
@@ -53,6 +56,8 @@ require('./config/passport')(passport);
 app.use('/api/users', users);
 app.use('/api/messages', messages);
 app.use('/api/channels', channels);
+app.use('/api/servers', servers);
+app.use('/api', apiIndex);
 
 // Production == true? then serve build
 if (process.env.NODE_ENV === 'production') {

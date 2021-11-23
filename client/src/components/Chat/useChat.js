@@ -17,14 +17,13 @@ const useChat = () => {
       setMessages(() => [...mostRecentMessages]);
     });
 
-    socketRef.current.on('newChatMessage', ({ name, avatar, content }) => {
+    socketRef.current.on('newChatMessage', ({ message_author, content }) => {
       // append message to the end of array, after using spread operator
 
       setMessages((msg) => [
         ...msg,
         {
-          name,
-          avatar,
+          message_author,
           content,
         },
       ]);

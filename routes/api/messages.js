@@ -9,11 +9,12 @@ const router = express.Router();
 // @access Public
 router.post('/', async (req, res) => {
   // Form validation
-  const { content, channelId } = req.body;
+  const { content, channelId, message_author } = req.body;
 
   const newMessage = new Message({
     channelId,
     content,
+    message_author,
   });
   try {
     const savedMessage = await newMessage.save();

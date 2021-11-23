@@ -24,7 +24,7 @@ class Register extends Component {
     const { auth, history } = this.props;
     // Logged == true, redirecto to dashboard.
     if (auth.isAuthenticated) {
-      history.push('/dashboard');
+      history.push('/@me');
     }
   }
 

@@ -25,13 +25,13 @@ class Login extends Component {
 
     // User logged => dashboard
     if (auth.isAuthenticated) {
-      history.push('/dashboard');
+      history.push('/@me');
     }
   }
 
   static getDerivedStateFromProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      nextProps.history.push('/dashboard'); // push user to dashboard when they login
+      nextProps.history.push('/@me');
     }
     if (nextProps.errors) {
       return {

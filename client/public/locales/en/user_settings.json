@@ -1,0 +1,35 @@
+{
+    "MyAccount": {
+        "title": "My Account",
+        "accountRemoval": {
+            "title": "Account Removal",
+            "description": "Disabling your account means you can recover it at any time after taking this action.",
+            "disableAccount": "Disable account",
+            "deleteAccount": "Delete account"
+        },
+        "passwordSettings":{
+            "title": "Password and authentication",
+            "changePassword": "Change password"
+        },
+        "userInformation":{
+            "username": "username",
+            "email": "Email",
+            "editButton": "Edit",
+            "revealButton": "Reveal",
+            "editProfile": "Edit User Profile"
+        }
+    },
+    "SettingsSidebar":{
+        "userSettings": "User Settings",
+        "myAccount": "My Account",
+        "userProfile": "User Profile",
+        "privacySafety": "Privacy &amp; safety",
+        "subscriptions": "Subscriptions",
+        "appearance": "Appearance",
+        "accessibility": "Accessibility",
+        "voiceVideo": "Voice &amp; video",
+        "language": "Language",
+        "changeLog": "Change log",
+        "logOut": "Log out"
+    }
+}
