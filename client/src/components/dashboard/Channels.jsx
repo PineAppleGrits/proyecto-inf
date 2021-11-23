@@ -49,8 +49,10 @@ const Channels = (props) => {
                   d="M16.59 8.59004L12 13.17L7.41 8.59004L6 10L12 16L18 10L16.59 8.59004Z"
                 />
               </svg>
+              <svg className="arrow-gKvcEx icon-2yIBmh" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M16.59 8.59004L12 13.17L7.41 8.59004L6 10L12 16L18 10L16.59 8.59004Z" /></svg>
               <h2 className="name-3l27Hl container-2ax-kl">
                 <div className="overflow-WK9Ogt">Canales de texto</div>
+                <svg className="arrow-gKvcEx icon-2yIBmh" width={24} height={24} viewBox="0 0 24 24"><path fill="currentColor" fillRule="evenodd" clipRule="evenodd" d="M16.59 8.59004L12 13.17L7.41 8.59004L6 10L12 16L18 10L16.59 8.59004Z" /></svg>
               </h2>
             </div>
             <div className="children-L002ao" />
