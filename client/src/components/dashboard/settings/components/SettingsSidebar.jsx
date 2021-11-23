@@ -59,9 +59,9 @@ const SettingsSidebar = (props) => {
             aria-disabled="false"
             tabIndex={-1}
             aria-label="User profile"
-            onClick={() => {
+/*             onClick={() => {
               handleTabChange(<UserProfile />);
-            }}
+            }} */
           >
             <Trans ns="user_settings" i18nKey="SettingsSidebar.userProfile">
               User Profile
