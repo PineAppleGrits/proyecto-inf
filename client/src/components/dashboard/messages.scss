@@ -496,3 +496,8 @@ html.disable-high-contrast * {
     display: -ms-flexbox;
     display: flex;
 }
+
+.selected-channel{
+    background: var(--hovered-bg);
+    border-radius: var(--bg-rounding);
+}

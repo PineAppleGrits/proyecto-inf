@@ -61,7 +61,7 @@ const Channels = (props) => {
         {props.channels && (
           props.channels.map((channel,index) => (
             <div className="containerDefault--pIXnN">
-          <div className="iconVisibility-sTNpHs wrapper-2jXpOf" role="listitem">
+          <div className={`iconVisibility-sTNpHs wrapper-2jXpOf ${channel._id == channelId ? `selected-channel` : ""}`} role="listitem">
             <div className="content-1x5b-n">
               <Link to={`/channel/${serverId}/${channel._id}`}
               className="mainContent-u_9PKf"
