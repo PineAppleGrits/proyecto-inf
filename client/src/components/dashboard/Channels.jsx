@@ -19,6 +19,8 @@ const customStyles = {
   },
 };
 const Channels = (props) => {
+  const {auth} = props;
+  const {user} = auth;
   const { serverId, channelId } = useParams();
   const [createModalIsOpen, setIsCreateOpen] = React.useState(false);
 
@@ -104,7 +106,8 @@ const Channels = (props) => {
                 </svg>
               </h2>
             </div>
-            <div className="children-L002ao">
+            {server.owner == user._id && (
+              <div onClick={openCreateModal} className="children-L002ao">
               <button
                 aria-label="Create channel"
                 tabIndex={-1}
@@ -128,6 +131,7 @@ const Channels = (props) => {
                 </div>
               </button>
             </div>
+            )}
           </div>
         </div>
         {props.channels &&

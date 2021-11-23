@@ -85,7 +85,7 @@ const ServerSidebar = (props) => {
             </div>
           </div>
         </div>
-        <Channels channels={server.channels} />
+        <Channels server={server} channels={server.channels} />
         <div className="unreadBottom-1_LF_w unread-15xhX5 container-35XQWE">
           <div
             className="bar-30k2ka unreadBar-3t3sYc unread-1xRYoj active-1SSsBb"
