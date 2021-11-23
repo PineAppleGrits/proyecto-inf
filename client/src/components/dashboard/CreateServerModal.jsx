@@ -84,7 +84,7 @@ const CreateServerModal = (props) => {
               dir="ltr"
               style={{ overflow: "hidden scroll", paddingRight: "8px" }}
             >
-              <div className="uploadIcon-2IFzZU">
+        {/*       <div className="uploadIcon-2IFzZU">
                 <div className="iconContainer-2B0ixr desaturate-qhyunI">
                   <svg
                     width={80}
@@ -133,7 +133,7 @@ const CreateServerModal = (props) => {
                     }}
                   />
                 </div>
-              </div>
+              </div> */}
               <form onSubmit={onSubmit}>
                 <div className="nameInput-2LpnKg">
                   <h5 className="colorStandard-2KCXvj size14-e6ZScH h5-18_1nd title-3sZWYQ defaultMarginh5-2mL-bP">
