@@ -167,7 +167,7 @@ const MainSidebar = (props) => {
             {servers && (
               <div aria-label="Servers">
                 {servers.map((server, index) => (
-                  <Link to={`/channel/${server._id}`}>
+                  <Link to={`/channel/${server._id}/${Object.keys(server.channels)[0]}`}>
                     <div key={index} className="listItem-2Ig28I">
                       <div
                         className="pill-ZqtR4i wrapper-sa6paO"
