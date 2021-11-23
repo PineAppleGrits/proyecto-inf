@@ -106,7 +106,7 @@ const Channels = (props) => {
                 </svg>
               </h2>
             </div>
-            {server.owner == user._id && (
+            {props.server.owner == user._id && (
               <div onClick={openCreateModal} className="children-L002ao">
               <button
                 aria-label="Create channel"
