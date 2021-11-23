@@ -3,7 +3,7 @@ import MessageBox from './MessageBox/MessageBox';
 import Messages from './Messages/Messages';
 import useChat from './useChat';
 
-const Chat = (currentUserData) => {
+const Chat = function (currentUserData) {
   const { messages, sendMessage } = useChat();
   return (
     <div>

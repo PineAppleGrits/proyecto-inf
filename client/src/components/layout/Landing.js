@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import LanguageSelector from '../util/LanguageSelector';
 import news from '../../utils/news';
 
-const Landing = ({ auth }) => {
+const Landing = function ({ auth }) {
   const { t } = useTranslation(['landing', 'news']);
   const { isAuthenticated } = auth;
   const appButton = isAuthenticated ? 'appButton' : 'loginButton';
@@ -58,70 +58,70 @@ const Landing = ({ auth }) => {
                   </svg>
                 </g>
               </svg>
-</div>
-              <div className="col-6 text-decoration-none d-flex justify-content-center">
-                <Link
-                  to="/"
-                  style={{ color: 'inherit' }}
-                  className="text-decoration-none"
-                >
-                  <h5>About</h5>
-                </Link>
-              </div>
-              <div className="col-3">
-                <div className="row ">
-                  <div className="col-xs">
-                    <LanguageSelector />
-                  </div>
-                  <div className="col-xs">
-                    <Link to="/@me" className="btn btn-primary">
-                      {t(appButton)}
-                    </Link>
-                  </div>
+            </div>
+            <div className="col-6 text-decoration-none d-flex justify-content-center">
+              <Link
+                to="/"
+                style={{ color: 'inherit' }}
+                className="text-decoration-none"
+              >
+                <h5>About</h5>
+              </Link>
+            </div>
+            <div className="col-3">
+              <div className="row ">
+                <div className="col-xs">
+                  <LanguageSelector />
+                </div>
+                <div className="col-xs">
+                  <Link to="/@me" className="btn btn-primary">
+                    {t(appButton)}
+                  </Link>
                 </div>
               </div>
             </div>
-            <div className="row">
-              <div className="col-12 text-center">
-                <h1 style={{ marginTop: '10rem' }}>
-                  <Trans i18nKey="landing.title">
-                    Hora de tirar
-                    <strong>Discord</strong>
-                    a la basura.
-                  </Trans>
-                </h1>
-                <br />
-              </div>
+          </div>
+          <div className="row">
+            <div className="col-12 text-center">
+              <h1 style={{ marginTop: '10rem' }}>
+                <Trans i18nKey="landing.title">
+                  Hora de tirar
+                  <strong>Discord</strong>
+                  a la basura.
+                </Trans>
+              </h1>
+              <br />
             </div>
+          </div>
 
-            <div className="row  p-5">
-              <div className="col d-flex justify-content-center">
-                <button type="button" className="btn disabled btn-rounded btn-lg ">
-                  {t('appButton')}
-                </button>
-              </div>
-              <div className="col d-flex justify-content-center">
-                <button type="button" className="btn btn-primary btn-rounded btn-lg ">
-                  {t('appButton')}
-                </button>
-              </div>
+          <div className="row  p-5">
+            <div className="col d-flex justify-content-center">
+              <button type="button" className="btn disabled btn-rounded btn-lg ">
+                {t('appButton')}
+              </button>
             </div>
-            {/* END IMAGE CONTAINER */}
+            <div className="col d-flex justify-content-center">
+              <button type="button" className="btn btn-primary btn-rounded btn-lg ">
+                {t('appButton')}
+              </button>
+            </div>
           </div>
-          <div className="container">
-            {/* NEXT COMP */}
-          </div>
+          {/* END IMAGE CONTAINER */}
+        </div>
+        <div className="container">
+          {/* NEXT COMP */}
         </div>
       </div>
+    </div>
 
-      );
+  );
 };
-      Landing.propTypes = {
-        auth: PropTypes.object.isRequired,
+Landing.propTypes = {
+  auth: PropTypes.object.isRequired,
 };
 const mapStateToProps = (state) => ({
-        auth: state.auth,
-      errors: state.errors,
+  auth: state.auth,
+  errors: state.errors,
 });
 
-      export default connect(mapStateToProps)(Landing);
+export default connect(mapStateToProps)(Landing);

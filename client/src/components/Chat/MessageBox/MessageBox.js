@@ -2,8 +2,9 @@ import React, { useState, useRef } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { useParams, withRouter } from 'react-router';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux'
-const MessageBox = (props) => {
+import { connect } from 'react-redux';
+
+const MessageBox = function (props) {
   const { channelId } = useParams();
   const [message, setMessage] = useState('');
   const messageRef = useRef('');
@@ -18,7 +19,7 @@ const MessageBox = (props) => {
       message_author: props.auth.user._id,
       channel_id: channelId,
     };
-    console.log({messageObject:messageObject})
+    console.log({ messageObject });
     props.onSendMessage(messageObject);
     return setMessage('');
   };

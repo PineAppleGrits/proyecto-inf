@@ -10,7 +10,7 @@ const options = [
   { value: 'de', label: 'Deutsch', icon: 'de.svg' },
 ];
 const { Option } = components;
-const IconOption = (property) => {
+const IconOption = function (property) {
   const { data } = property;
   return (
     <Option {...property}>
@@ -54,7 +54,7 @@ const customStyles = {
     };
   },
 };
-const LanguageSelector = (props) => {
+const LanguageSelector = function (props) {
   const changeLanguage = (e) => {
     i18n.changeLanguage(e.value);
   };

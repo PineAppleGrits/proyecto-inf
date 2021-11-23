@@ -41,7 +41,7 @@
     "build": "npm i --no-optional && npm run client-install && npm run build --prefix client",
     "prod": "NODE_ENV=production npm start",
     "build-prod": "npm run build && npm run prod",
-    "lint": "eslint **"
+    "lint": "eslint ** --no-error-on-unmatched-pattern"
   },
   "repository": {
     "type": "git",

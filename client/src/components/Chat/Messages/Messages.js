@@ -8,7 +8,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 
-const Messages = ({ messages }) => {
+const Messages = function ({ messages }) {
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
@@ -26,22 +26,14 @@ const Messages = ({ messages }) => {
             </ListItemAvatar>
             <ListItemText
               primary={(
-                <>
-
-
-                  <span className="username-1A8OIy desaturateUserColors-1gar-1 clickable-1bVtEA" role="button" tabIndex={0}>
-                    {messageObject.message_author.name}
-                  </span>
-
-
-                </>
+                <span className="username-1A8OIy desaturateUserColors-1gar-1 clickable-1bVtEA" role="button" tabIndex={0}>
+                  {messageObject.message_author.name}
+                </span>
               )}
               secondary={(
-                <>
-                  <div className="contents-2mQqc9">
-                        <div id="message-content-885696197313060965" className="markup-2BOw-j messageContent-2qWWxC">{messageObject.content}</div>
-                        </div>
-                </>
+                <div className="contents-2mQqc9">
+                  <div id="message-content-885696197313060965" className="markup-2BOw-j messageContent-2qWWxC">{messageObject.content}</div>
+                </div>
               )}
             />
           </ListItem>,
@@ -56,5 +48,3 @@ Messages.propTypes = {
   messages: PropTypes.object.isRequired,
 };
 export default Messages;
-
-

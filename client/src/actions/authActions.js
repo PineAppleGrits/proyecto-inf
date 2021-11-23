@@ -47,16 +47,15 @@ export const loginUser = (userData) => (dispatch) => {
 export const getUserInfo = (localStorage, store) => {
   // Set auth token header auth
   const localToken = localStorage.jwtToken;
-  axios.post('/api/users/', {token: localToken}).then(({data}) => {
-    const {token} = data;
+  axios.post('/api/users/', { token: localToken }).then(({ data }) => {
+    const { token } = data;
     setAuthToken(token);
     const decoded = jwtDecode(token);
     store.dispatch(setCurrentUser(decoded));
-  })
+  });
   // False = not expired token
   return false;
 };
-
 
 // User loading
 export const setUserLoading = () => ({
@@ -88,12 +87,12 @@ export const storedUser = (localStorage, store) => {
     // True = expired token
     return true;
   }
-  axios.post('/api/users/', {token: localToken}).then(({data}) => {
-    const {token} = data;
+  axios.post('/api/users/', { token: localToken }).then(({ data }) => {
+    const { token } = data;
     setAuthToken(token);
     const decoded = jwtDecode(token);
     store.dispatch(setCurrentUser(decoded));
-  })
+  });
   // False = not expired token
   return false;
 };

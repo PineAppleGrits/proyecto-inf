@@ -6,12 +6,12 @@ const useChat = () => {
   const { channelId, serverId } = useParams();
   const socketRef = useRef();
   const PORT = process.env.PORT || 5000;
-  const URL = `http://localhost`
+  const URL = 'http://localhost';
   const [messages, setMessages] = useState([]);
   useEffect(() => {
     socketRef.current = socketIOClient();
 
-    socketRef.current.emit('onServer', channelId,serverId);
+    socketRef.current.emit('onServer', channelId, serverId);
     socketRef.current.on('mostRecentMessages', (mostRecentMessages) => {
       // On start, load recents
       setMessages(() => [...mostRecentMessages]);
@@ -33,7 +33,7 @@ const useChat = () => {
     return () => {
       socketRef.current.disconnect();
     };
-  }, [channelId,serverId]);
+  }, [channelId, serverId]);
   const sendMessage = (messageObject) => {
     socketRef.current.emit('newChatMessage', messageObject);
   };
