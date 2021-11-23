@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withRouterm, useParams } from 'react-router';
+import { withRouter, useParams } from 'react-router';
 import axios from 'axios';
 const CreateChannelModal = (props) => {
     const serverName = React.useRef();
